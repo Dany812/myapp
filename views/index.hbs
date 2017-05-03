@@ -1,0 +1,52 @@
+<h1>Feed Reader Rss, PDF, ATOM</h1>
+
+
+<section class="insert">
+
+<form action="/auth" method="post">
+  
+    <input type="text" name="name" value="www">
+    <input type="submit" >
+</form>
+
+
+</section>
+<section class="get">
+    <h3>Get Users Data</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                 <div>name: {{ this.name }}</div>
+                <div>Title: {{ this.Title }}</div>
+                <div>Link: {{ this.Link }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+
+<section class="update">
+    <h3>Update Data</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="name">name</label>
+            <input type="text" id="name" name="name">
+        </div>
+         <div class="input">
+            <label for="Title">Title</label>
+            <input type="text" id="Title" name="Title">
+        </div>
+        <div class="input">
+            <label for="Link">Link</label>
+            <input type="text" id="Link" name="Link">
+        </div>
+       
+        <button type="submit">UPDATE</button>
+    </form>
+</section>

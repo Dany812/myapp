@@ -1,0 +1,51 @@
+
+<section>
+  <ul>
+  <table>
+    <tr>
+      <td class="td-title-rss">{{#each wwwname }}
+      <li>{{this}}</li>
+          {{/each}}
+        </td>
+      <td >{{#each www }}
+        <form action="/load" method="post">
+            <input type="text"  name="name" value="{{ this }}" class="rss">
+            <input type="submit" value="Loading">     
+        </form>  
+          {{/each}}</td>
+    </tr>
+  </table>
+</ul>
+</section>
+<section>
+<ul>
+    <h3>Get Data</h3> 
+    <form action="/load" method="post">
+    <table>
+   <tr>
+       <td class="td-title">
+       {{#each loadtitle}}
+             {{this}}
+             <br>
+        {{/each}}</td>
+       <td class="td-link"> 
+       {{#each loadlink}}
+
+            <a href="{{this}}">Link's</a>
+             <br>
+            {{/each}}</td>
+       <td class="td-data">{{#each loadtime}}
+
+           {{this}} 
+          <br> 
+            
+           
+            {{/each}}</td>
+   </tr> 
+</table>
+   
+    </form>
+        
+   
+</ul>
+</section>
